@@ -1,0 +1,116 @@
+
+/* Advanced Styling */
+:root {
+    --primary-color: #f39c12;
+    --secondary-color: #e67e22;
+    --text-color: #333;
+    --bg-light: #f4f4f4;
+    --transition: all 0.3s ease;
+  }
+  
+  /* Enhanced Navigation */
+  nav {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background-color: rgba(26, 25, 25, 0.9);
+  }
+  
+  nav .nav-links a {
+    position: relative;
+  }
+  
+  nav .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+  }
+  
+  nav .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  /* Enhanced Hero Section */
+  .hero-content {
+    animation: fadeIn 1s ease-in;
+  }
+  
+  .hero-content h1 {
+    font-size: 4em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+  }
+  
+  /* Service Cards Enhancement */
+  .service-card {
+    transition: var(--transition);
+    border: 1px solid transparent;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+  }
+  
+  /* Contact Form Enhancement */
+  .container form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+  }
+  
+  input, textarea {
+    transition: var(--transition);
+    border: 2px solid transparent;
+  }
+  
+  input:focus, textarea:focus {
+    transform: scale(1.01);
+    border-color: var(--primary-color);
+  }
+  
+  button {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary-color);
+    transition: var(--transition);
+    z-index: -1;
+  }
+  
+  button:hover::before {
+    left: 0;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive Design Enhancements */
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.5em;
+    }
+    
+    nav {
+      padding: 0.5em;
+    }
+  }
+  
